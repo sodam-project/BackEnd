@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "big_keyword")
 @Getter
@@ -18,4 +21,8 @@ public class BigKeyword {
     private Long bigKeywordId;
 
     private String bigKeywordName;
+
+    // 의존관계 매핑(SmallKeyword)
+    @OneToMany(mappedBy = "bigKeyword", cascade = CascadeType.ALL)
+    private List<SmallKeyword> smallKeywordList = new ArrayList<>();
 }

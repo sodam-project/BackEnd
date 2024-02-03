@@ -20,4 +20,9 @@ public class SmallKeyword {
     private String smallKeywordName;
     private Boolean isAnalyzed;
     private Integer weight;
+
+    // 의존 관계 매핑 (BigKeyword)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "big_keyword_id")
+    private BigKeyword bigKeyword;
 }
