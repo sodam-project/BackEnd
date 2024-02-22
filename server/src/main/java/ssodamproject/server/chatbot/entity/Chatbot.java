@@ -22,6 +22,7 @@ public class Chatbot {
 
     private String chatbotName;
 
+    private Integer chatbotVisit;
 
 
     @OneToMany(mappedBy = "chatbot", cascade = CascadeType.REMOVE)

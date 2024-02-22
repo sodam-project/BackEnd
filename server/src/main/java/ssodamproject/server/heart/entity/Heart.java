@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ssodamproject.server.chatbot.entity.Chatbot;
-import ssodamproject.server.user.entity.User;
+import ssodamproject.server.user.User;
 
 @Entity
 @Getter

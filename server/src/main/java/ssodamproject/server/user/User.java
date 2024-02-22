@@ -1,4 +1,4 @@
-package ssodamproject.server.user.entity;
+package ssodamproject.server.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
