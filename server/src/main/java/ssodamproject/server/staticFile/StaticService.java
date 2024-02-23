@@ -1,10 +1,10 @@
 package ssodamproject.server.staticFile;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ssodamproject.server.common.api.ApiResponseDto;
 import ssodamproject.server.common.api.ErrorType;
 import ssodamproject.server.common.api.ResponseUtils;
