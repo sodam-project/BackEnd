@@ -25,12 +25,18 @@ public class GPTCompletionChatRequest {
 
     private Integer maxTokens;
 
+    private Double top_n;
+
+    private Double temperature;
+
 
     public static ChatCompletionRequest of(GPTCompletionChatRequest request) {
         return ChatCompletionRequest.builder()
                 .model(request.getModel())
                 .messages(convertChatMessages(request))
                 .maxTokens(request.getMaxTokens())
+                .temperature(request.getTemperature())
+                .topP(request.getTop_n())
                 .build();
     }
 
