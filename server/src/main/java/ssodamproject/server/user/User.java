@@ -1,17 +1,18 @@
-package ssodamproject.server.user.entity;
+package ssodamproject.server.user;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ssodamproject.server.heart.entity.Heart;
+import ssodamproject.server.heart.Heart;
 
+import javax.persistence.*;
 import java.util.List;
 
-@Entity
+
 @Getter
 @Setter
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {

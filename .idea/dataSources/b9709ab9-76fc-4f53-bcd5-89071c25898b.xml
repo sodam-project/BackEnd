@@ -1044,8 +1044,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="304" parent="1" name="ssodam">
       <Current>1</Current>
-      <IntrospectionTimestamp>2024-02-22.23:56:01</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-02-22.05:56:01</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2024-02-23.23:50:51</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-02-23.05:50:51</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="305" parent="1" name="sys">
@@ -1073,243 +1073,285 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="311" parent="304" name="big_keyword">
+    <table id="311" parent="304" name="chatbot">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="312" parent="304" name="chatbot">
+    <table id="312" parent="304" name="chatting">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="313" parent="304" name="chatting">
+    <table id="313" parent="304" name="gpt_question">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="314" parent="304" name="heart">
+    <table id="314" parent="304" name="gptanswer">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="315" parent="304" name="review">
+    <table id="315" parent="304" name="heart">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="316" parent="304" name="small_keyword">
+    <table id="316" parent="304" name="review">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="317" parent="304" name="user">
+    <table id="317" parent="304" name="static_entity">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="318" parent="311" name="big_keyword_id">
+    <table id="318" parent="304" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="319" parent="311" name="chatbot_id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="319" parent="311" name="big_keyword_name">
+    <column id="320" parent="311" name="chatbot_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="320" parent="311" name="PRIMARY">
-      <ColNames>big_keyword_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="321" parent="311" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="322" parent="312" name="chatbot_id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
+    <column id="321" parent="311" name="chatbot_visit">
+      <DasType>int|0s</DasType>
+      <Position>3</Position>
     </column>
-    <column id="323" parent="312" name="chatbot_name">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <index id="324" parent="312" name="PRIMARY">
+    <index id="322" parent="311" name="PRIMARY">
       <ColNames>chatbot_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="325" parent="312" name="PRIMARY">
+    <key id="323" parent="311" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="326" parent="313" name="chatting_evaluation">
-      <DasType>int|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="327" parent="313" name="chatbot_id">
-      <DasType>bigint|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="328" parent="313" name="chatting_id">
+    <column id="324" parent="312" name="chatting_id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="325" parent="312" name="chatting_content">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="326" parent="312" name="chatting_evaluation">
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="329" parent="313" name="chatting_content">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="327" parent="312" name="chatbot_id">
+      <DasType>bigint|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="330" parent="313" name="FK9uy9lorlid65uybc0mga435i8">
+    <foreign-key id="328" parent="312" name="FK9uy9lorlid65uybc0mga435i8">
       <ColNames>chatbot_id</ColNames>
       <RefColNames>chatbot_id</RefColNames>
       <RefTableName>chatbot</RefTableName>
     </foreign-key>
-    <index id="331" parent="313" name="PRIMARY">
+    <index id="329" parent="312" name="PRIMARY">
       <ColNames>chatting_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="332" parent="313" name="FK9uy9lorlid65uybc0mga435i8">
+    <index id="330" parent="312" name="FK9uy9lorlid65uybc0mga435i8">
       <ColNames>chatbot_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="333" parent="313" name="PRIMARY">
+    <key id="331" parent="312" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="334" parent="314" name="chatbot_id">
-      <DasType>bigint|0s</DasType>
+    <column id="332" parent="313" name="id">
+      <AutoIncrement>17</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="335" parent="314" name="heart_id">
+    <column id="333" parent="313" name="created_date">
+      <DasType>date|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="334" parent="313" name="last_modified_date">
+      <DasType>date|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="335" parent="313" name="gpt_question">
+      <DasType>varchar(1500)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="336" parent="313" name="answer_id">
+      <DasType>int|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="337" parent="313" name="FKkmp8s2fm60bgpvxhbiwhlkwoy">
+      <ColNames>answer_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>gptanswer</RefTableName>
+    </foreign-key>
+    <index id="338" parent="313" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="339" parent="313" name="FKkmp8s2fm60bgpvxhbiwhlkwoy">
+      <ColNames>answer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="340" parent="313" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="341" parent="314" name="id">
+      <AutoIncrement>18</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="342" parent="314" name="created_date">
+      <DasType>date|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="343" parent="314" name="last_modified_date">
+      <DasType>date|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="344" parent="314" name="gpt_answer">
+      <DasType>varchar(1500)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <index id="345" parent="314" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="346" parent="314" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="347" parent="315" name="heart_id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="348" parent="315" name="chatbot_id">
+      <DasType>bigint|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="336" parent="314" name="user_id">
+    <column id="349" parent="315" name="user_id">
       <DasType>bigint|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="337" parent="314" name="FK63u63qaq48k7rxev5qx1t6h4c">
+    <foreign-key id="350" parent="315" name="FK63u63qaq48k7rxev5qx1t6h4c">
       <ColNames>chatbot_id</ColNames>
       <RefColNames>chatbot_id</RefColNames>
       <RefTableName>chatbot</RefTableName>
     </foreign-key>
-    <foreign-key id="338" parent="314" name="FK5pv32bwn1jhofpwouomqupc6u">
+    <foreign-key id="351" parent="315" name="FK5pv32bwn1jhofpwouomqupc6u">
       <ColNames>user_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <index id="339" parent="314" name="PRIMARY">
+    <index id="352" parent="315" name="PRIMARY">
       <ColNames>heart_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="340" parent="314" name="FK63u63qaq48k7rxev5qx1t6h4c">
+    <index id="353" parent="315" name="FK63u63qaq48k7rxev5qx1t6h4c">
       <ColNames>chatbot_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="341" parent="314" name="FK5pv32bwn1jhofpwouomqupc6u">
+    <index id="354" parent="315" name="FK5pv32bwn1jhofpwouomqupc6u">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="342" parent="314" name="PRIMARY">
+    <key id="355" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="343" parent="315" name="chatbot_id">
-      <DasType>bigint|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="344" parent="315" name="review_id">
+    <column id="356" parent="316" name="review_id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="357" parent="316" name="review_content">
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="345" parent="315" name="review_content">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="358" parent="316" name="chatbot_id">
+      <DasType>bigint|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="346" parent="315" name="FKefip4y3vvwegty6nyd1nb5enc">
+    <foreign-key id="359" parent="316" name="FKefip4y3vvwegty6nyd1nb5enc">
       <ColNames>chatbot_id</ColNames>
       <RefColNames>chatbot_id</RefColNames>
       <RefTableName>chatbot</RefTableName>
     </foreign-key>
-    <index id="347" parent="315" name="PRIMARY">
+    <index id="360" parent="316" name="PRIMARY">
       <ColNames>review_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="348" parent="315" name="FKefip4y3vvwegty6nyd1nb5enc">
+    <index id="361" parent="316" name="FKefip4y3vvwegty6nyd1nb5enc">
       <ColNames>chatbot_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="349" parent="315" name="PRIMARY">
+    <key id="362" parent="316" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="350" parent="316" name="is_analyzed">
-      <DasType>bit(1)|0s</DasType>
+    <column id="363" parent="317" name="static_entity_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="351" parent="316" name="weight">
+    <column id="364" parent="317" name="today_visit">
       <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="352" parent="316" name="big_keyword_id">
-      <DasType>bigint|0s</DasType>
+    <column id="365" parent="317" name="total_visit">
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="353" parent="316" name="small_keyword_id">
-      <AutoIncrement>1</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="354" parent="316" name="small_keyword_name">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <foreign-key id="355" parent="316" name="FK3xvt5a4kvq5ah64t0ipcl9cau">
-      <ColNames>big_keyword_id</ColNames>
-      <RefColNames>big_keyword_id</RefColNames>
-      <RefTableName>big_keyword</RefTableName>
-    </foreign-key>
-    <index id="356" parent="316" name="PRIMARY">
-      <ColNames>small_keyword_id</ColNames>
+    <index id="366" parent="317" name="PRIMARY">
+      <ColNames>static_entity_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="357" parent="316" name="FK3xvt5a4kvq5ah64t0ipcl9cau">
-      <ColNames>big_keyword_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="358" parent="316" name="PRIMARY">
+    <key id="367" parent="317" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="359" parent="317" name="user_id">
+    <column id="368" parent="318" name="user_id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="360" parent="317" name="user_ip">
+    <column id="369" parent="318" name="user_ip">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="361" parent="317" name="PRIMARY">
+    <index id="370" parent="318" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="362" parent="317" name="PRIMARY">
+    <key id="371" parent="318" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
