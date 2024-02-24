@@ -1,9 +1,6 @@
 package ssodamproject.server.user.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import ssodamproject.server.heart.Heart;
 
 import javax.persistence.*;
@@ -15,6 +12,7 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User {
 
     @Id

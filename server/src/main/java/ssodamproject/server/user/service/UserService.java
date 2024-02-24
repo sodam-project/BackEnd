@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
+@Transactional
 public class UserService {
 
     public String getClientIP(HttpServletRequest request) {
