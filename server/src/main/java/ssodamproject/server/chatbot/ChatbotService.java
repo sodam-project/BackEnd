@@ -4,14 +4,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ssodamproject.server.chatbot.dto.ChatbotDto;
+import ssodamproject.server.chatbot.dto.ChatbotListDto;
 import ssodamproject.server.common.api.*;
 import ssodamproject.server.heart.Heart;
 import ssodamproject.server.heart.HeartRepository;
 import ssodamproject.server.user.entity.User;
 import ssodamproject.server.user.repository.UserRepository;
 
-import java.util.Optional;
-import java.util.List;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -62,5 +63,40 @@ public class ChatbotService {
 
             return ResponseUtils.ok(SuccessResponse.of(HttpStatus.OK, "좋아요가 저장되었습니다."), null);
         }
+    }
+
+    public ApiResponseDto<List<ChatbotDto>> readChatbotList() {
+        List<Chatbot> chatbotList = chatbotRepository.findAll();
+
+        if (chatbotList.isEmpty()) {
+            throw new RestApiException(ErrorType.NOT_FOUND_CHATBOT_LIST);
+        }
+
+        Collections.sort(chatbotList, Comparator.comparing(chatbot -> chatbot.getHearts().size(), Comparator.reverseOrder())); // 내림차순 정렬
+
+        List<ChatbotDto> chatbotDtoList = new ArrayList<>();
+
+        int rank = 1;
+        int nowHeart = chatbotList.get(0).getHearts().size();
+
+        for (int i = 0; i < chatbotList.size(); i++) {
+            Chatbot chatbot = chatbotList.get(i);
+            int hearts = chatbot.getHearts().size();
+
+            if (hearts < nowHeart)
+                rank++;
+
+            ChatbotDto chatbotDto = ChatbotDto.builder()
+                    .chatbotId(chatbot.getChatbotId())
+                    .chatbotName(chatbot.getChatbotName())
+                    .chatbotLike(hearts)
+                    .chatbotRanking(rank)
+                    .build();
+            chatbotDtoList.add(chatbotDto);
+
+            nowHeart = hearts;
+        }
+
+        return ResponseUtils.ok(chatbotDtoList, null);
     }
 }

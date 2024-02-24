@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ssodamproject.server.chating.entity.Chatting;
+import ssodamproject.server.heart.Heart;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,6 +27,9 @@ public class Chatbot {
 
     @OneToMany(mappedBy = "chatbot", cascade = CascadeType.REMOVE)
     private List<Chatting> chattings;
+
+    @OneToMany(mappedBy = "chatbot", cascade = CascadeType.REMOVE)
+    private List<Heart> hearts;
 
 
 }
