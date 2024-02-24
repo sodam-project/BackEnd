@@ -38,3 +38,10 @@ out/
 
 ### properties ###
 application.properties
+
+.tmp
+caches
+daemon
+jdks
+native
+wrapper
