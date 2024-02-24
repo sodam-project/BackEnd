@@ -4,11 +4,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 import ssodamproject.server.chatbot.dto.ChatbotDto;
-import ssodamproject.server.chatbot.dto.ChatbotListDto;
+import ssodamproject.server.chatbot.dto.CreateChatbotReviewDto;
 import ssodamproject.server.common.api.*;
 import ssodamproject.server.heart.Heart;
 import ssodamproject.server.heart.HeartRepository;
+import ssodamproject.server.review.entity.Review;
+import ssodamproject.server.review.repository.ReviewRepository;
 import ssodamproject.server.user.entity.User;
 import ssodamproject.server.user.repository.UserRepository;
 
@@ -22,6 +25,7 @@ public class ChatbotService {
     private final UserRepository userRepository;
     private final HeartRepository heartRepository;
     private final ChatbotRepository chatbotRepository;
+    private final ReviewRepository reviewRepository;
 
 
     public ApiResponseDto<SuccessResponse> createHeart(String clientIp, Long chatbotId) {
@@ -98,5 +102,18 @@ public class ChatbotService {
         }
 
         return ResponseUtils.ok(chatbotDtoList, null);
+    }
+
+    public ApiResponseDto<SuccessResponse> createReview(Long chatbotId, CreateChatbotReviewDto createChatbotReviewDto) {
+        Chatbot chatbot = chatbotRepository.findByChatbotId(chatbotId)
+                .orElseThrow(() -> new RestApiException(ErrorType.NOT_FOUND_CHATBOT));
+
+        Review review = Review.builder()
+                .chatbot(chatbot)
+                .reviewContent(createChatbotReviewDto.getReviewContent()).build();
+
+        reviewRepository.save(review);
+
+        return ResponseUtils.ok(SuccessResponse.of(HttpStatus.OK, "리뷰가 등록되었습니다."), null);
     }
 }

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ssodamproject.server.chatbot.dto.ChatbotDto;
 import ssodamproject.server.chatbot.dto.ChatbotListDto;
+import ssodamproject.server.chatbot.dto.CreateChatbotReviewDto;
 import ssodamproject.server.common.api.ApiResponseDto;
 import ssodamproject.server.common.api.SuccessResponse;
 import ssodamproject.server.user.service.UserService;
@@ -24,9 +25,14 @@ public class ChatbotController {
         return chatbotService.readChatbotList();
     }
 
-    @PostMapping("/like/{chatbotId}")
+    @PostMapping("/{chatbotId}/like")
     public ApiResponseDto<SuccessResponse> createHeart(HttpServletRequest request, @PathVariable("chatbotId") Long chatbotId) {
         String clientIp = userService.getClientIP(request);
         return chatbotService.createHeart(clientIp, chatbotId);
+    }
+
+    @PostMapping("/{chatbotId}/review")
+    public ApiResponseDto<SuccessResponse> createReview(@PathVariable("chatbotId") Long chatbotId, @RequestBody CreateChatbotReviewDto createChatbotReviewDto) {
+        return chatbotService.createReview(chatbotId, createChatbotReviewDto);
     }
 }
