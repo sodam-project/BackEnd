@@ -1,17 +1,19 @@
-package ssodamproject.server.heart.entity;
+package ssodamproject.server.heart;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ssodamproject.server.chatbot.entity.Chatbot;
+import ssodamproject.server.chatbot.Chatbot;
 import ssodamproject.server.user.entity.User;
 
-@Entity
+import javax.persistence.*;
+
+
 @Getter
 @Setter
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class Heart {

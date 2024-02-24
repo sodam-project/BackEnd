@@ -1,15 +1,16 @@
 package ssodamproject.server.review.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ssodamproject.server.chatbot.entity.Chatbot;
+import ssodamproject.server.chatbot.Chatbot;
 
-@Entity
+import javax.persistence.*;
+
 @Getter
+@Entity
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
