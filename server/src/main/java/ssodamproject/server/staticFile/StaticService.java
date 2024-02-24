@@ -6,12 +6,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ssodamproject.server.common.api.ApiResponseDto;
-import ssodamproject.server.common.api.ErrorType;
 import ssodamproject.server.common.api.ResponseUtils;
-import ssodamproject.server.common.api.RestApiException;
-
-import java.time.LocalDateTime;
-import java.util.List;
+import ssodamproject.server.common.enumSet.ErrorType;
+import ssodamproject.server.common.exception.RestApiException;
 
 @Slf4j
 @Service

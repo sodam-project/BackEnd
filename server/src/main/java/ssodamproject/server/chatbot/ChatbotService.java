@@ -10,6 +10,8 @@ import ssodamproject.server.chatbot.dto.ChatbotLikeDto;
 import ssodamproject.server.chatbot.dto.ChatbotReviewDto;
 import ssodamproject.server.chatbot.dto.CreateChatbotReviewDto;
 import ssodamproject.server.common.api.*;
+import ssodamproject.server.common.enumSet.ErrorType;
+import ssodamproject.server.common.exception.RestApiException;
 import ssodamproject.server.heart.Heart;
 import ssodamproject.server.heart.HeartRepository;
 import ssodamproject.server.review.Dto.ReviewDto;
@@ -78,6 +80,7 @@ public class ChatbotService {
 
         Chatbot chatbot = chatbotRepository.findByChatbotId(chatbotId)
                 .orElseThrow(() -> new RestApiException(ErrorType.NOT_FOUND_CHATBOT));
+
 
         if (optionalUser.isPresent()) { // 유저 정보가 존재할 때
             User user = optionalUser.get();
