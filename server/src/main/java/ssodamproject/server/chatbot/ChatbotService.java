@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import ssodamproject.server.chatbot.dto.ChatbotDto;
+import ssodamproject.server.chatbot.dto.ChatbotLikeDto;
 import ssodamproject.server.chatbot.dto.ChatbotReviewDto;
 import ssodamproject.server.chatbot.dto.CreateChatbotReviewDto;
 import ssodamproject.server.common.api.*;
@@ -69,6 +70,29 @@ public class ChatbotService {
             heartRepository.save(heart);
 
             return ResponseUtils.ok(SuccessResponse.of(HttpStatus.OK, "좋아요가 저장되었습니다."), null);
+        }
+    }
+
+    public ApiResponseDto<ChatbotLikeDto> readChatbotLiked(String clientIp, Long chatbotId) {
+        Optional<User> optionalUser = userRepository.findByUserIp(clientIp);
+
+        Chatbot chatbot = chatbotRepository.findByChatbotId(chatbotId)
+                .orElseThrow(() -> new RestApiException(ErrorType.NOT_FOUND_CHATBOT));
+
+        if (optionalUser.isPresent()) { // 유저 정보가 존재할 때
+            User user = optionalUser.get();
+            List<Heart> heartList = user.getHearts();
+
+            for (Heart heart : heartList) {
+                if (heart.getChatbot() == chatbot)
+                    return ResponseUtils.ok(new ChatbotLikeDto(Boolean.TRUE), null);
+            }
+
+            return ResponseUtils.ok(new ChatbotLikeDto(Boolean.FALSE), null);
+
+        }
+        else { // 유저 정보가 존재하지 않을 때
+            return ResponseUtils.ok(new ChatbotLikeDto(Boolean.FALSE), null);
         }
     }
 

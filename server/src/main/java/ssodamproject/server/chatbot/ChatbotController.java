@@ -2,10 +2,7 @@ package ssodamproject.server.chatbot;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ssodamproject.server.chatbot.dto.ChatbotDto;
-import ssodamproject.server.chatbot.dto.ChatbotListDto;
-import ssodamproject.server.chatbot.dto.ChatbotReviewDto;
-import ssodamproject.server.chatbot.dto.CreateChatbotReviewDto;
+import ssodamproject.server.chatbot.dto.*;
 import ssodamproject.server.common.api.ApiResponseDto;
 import ssodamproject.server.common.api.SuccessResponse;
 import ssodamproject.server.user.service.UserService;
@@ -30,6 +27,12 @@ public class ChatbotController {
     public ApiResponseDto<SuccessResponse> createHeart(HttpServletRequest request, @PathVariable("chatbotId") Long chatbotId) {
         String clientIp = userService.getClientIP(request);
         return chatbotService.createHeart(clientIp, chatbotId);
+    }
+
+    @GetMapping("{chatbotId}/like")
+    public ApiResponseDto<ChatbotLikeDto> readChatbotLiked(HttpServletRequest request, @PathVariable("chatbotId") Long chatbotId) {
+        String clientIp = userService.getClientIP(request);
+        return chatbotService.readChatbotLiked(clientIp, chatbotId);
     }
 
     @PostMapping("/{chatbotId}/review")
