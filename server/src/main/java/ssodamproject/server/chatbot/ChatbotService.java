@@ -6,16 +6,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import ssodamproject.server.chatbot.dto.ChatbotDto;
+import ssodamproject.server.chatbot.dto.ChatbotReviewDto;
 import ssodamproject.server.chatbot.dto.CreateChatbotReviewDto;
 import ssodamproject.server.common.api.*;
 import ssodamproject.server.heart.Heart;
 import ssodamproject.server.heart.HeartRepository;
+import ssodamproject.server.review.Dto.ReviewDto;
 import ssodamproject.server.review.entity.Review;
 import ssodamproject.server.review.repository.ReviewRepository;
 import ssodamproject.server.user.entity.User;
 import ssodamproject.server.user.repository.UserRepository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -115,5 +118,25 @@ public class ChatbotService {
         reviewRepository.save(review);
 
         return ResponseUtils.ok(SuccessResponse.of(HttpStatus.OK, "리뷰가 등록되었습니다."), null);
+    }
+
+    public ApiResponseDto<ChatbotReviewDto> readReviewList(Long chatbotId) {
+        Chatbot chatbot = chatbotRepository.findByChatbotId(chatbotId)
+                .orElseThrow(() -> new RestApiException(ErrorType.NOT_FOUND_CHATBOT));
+
+        ChatbotReviewDto chatbotReviewDto = new ChatbotReviewDto();
+
+        chatbotReviewDto.setChatbotId(chatbot.getChatbotId());
+        chatbotReviewDto.setChatbotName(chatbotReviewDto.getChatbotName());
+
+        List<Review> reviewList = reviewRepository.findByChatbot(chatbot);
+
+        List<ReviewDto> reviewDtoList = reviewList.stream()
+                .map(review -> new ReviewDto(review.getReviewId(), review.getReviewContent()))
+                .collect(Collectors.toList());
+
+        chatbotReviewDto.setReviewList(reviewDtoList);
+
+        return ResponseUtils.ok(chatbotReviewDto, null);
     }
 }
