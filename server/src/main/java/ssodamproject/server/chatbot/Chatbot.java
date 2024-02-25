@@ -1,5 +1,6 @@
 package ssodamproject.server.chatbot;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,6 @@ import lombok.Setter;
 import ssodamproject.server.chating.entity.Chatting;
 import ssodamproject.server.heart.Heart;
 
-import javax.persistence.*;
 import java.util.List;
 
 @Getter
