@@ -1,21 +1,14 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
+	id 'org.springframework.boot' version '3.2.3'
 	id 'io.spring.dependency-management' version '1.1.4'
-
 }
 
-group = 'ssodam-project'
+group = 'ssodam'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '19'
-}
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+	sourceCompatibility = '17'
 }
 
 repositories {
@@ -23,22 +16,22 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.theokanning.openai-gpt3-java:service:0.18.2'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
-	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.theokanning.openai-gpt3-java:service:0.18.2'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8'
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
-
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+tasks.named('test') {
+	useJUnitPlatform()
+}
