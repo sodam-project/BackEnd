@@ -1,5 +1,6 @@
 package ssodamproject.server.chatbot;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ssodamproject.server.chatbot.dto.*;
@@ -7,7 +8,6 @@ import ssodamproject.server.common.api.ApiResponseDto;
 import ssodamproject.server.common.api.SuccessResponse;
 import ssodamproject.server.user.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 
 import java.util.List;
 

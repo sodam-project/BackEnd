@@ -1,11 +1,11 @@
 package ssodamproject.server.review.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
 import ssodamproject.server.chatbot.Chatbot;
 import ssodamproject.server.user.entity.User;
 
-import javax.persistence.*;
 
 @Getter
 @Entity

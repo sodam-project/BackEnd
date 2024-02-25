@@ -1,10 +1,10 @@
 package ssodamproject.server.GPT.entity;
 
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 
 
 @Entity

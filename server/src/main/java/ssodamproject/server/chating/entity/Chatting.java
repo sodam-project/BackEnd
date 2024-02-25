@@ -1,13 +1,13 @@
 package ssodamproject.server.chating.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ssodamproject.server.chatbot.Chatbot;
 
-import javax.persistence.*;
 
 
 @Getter
