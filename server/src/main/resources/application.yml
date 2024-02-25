@@ -19,4 +19,4 @@ server:
       hibernate:
         format_sql: true
 fine_tuned_model_id: ${MODEL_ID}
-client: ${MODEL_CLINET}
+client: ${MODEL_CLIENT}
