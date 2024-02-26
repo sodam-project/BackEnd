@@ -24,8 +24,8 @@ public class StaticService {
         StaticEntity staticEntity = staticRepository.findById(1L)
                         .orElseThrow(()-> new RestApiException(ErrorType.NOT_FOUND));
 
-        staticDto.setTotalVisit(staticDto.getTotalVisit());
-        staticDto.setTodayVisit(staticDto.getTodayVisit());
+        staticDto.setTotalVisit(staticEntity.getTotalVisit());
+        staticDto.setTodayVisit(staticEntity.getTodayVisit());
 
         staticEntity.setTodayVisit(staticEntity.getTodayVisit()+1);
         staticEntity.setTotalVisit(staticEntity.getTotalVisit()+1);
