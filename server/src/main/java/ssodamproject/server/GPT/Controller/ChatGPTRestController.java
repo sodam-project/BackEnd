@@ -12,7 +12,7 @@ import ssodamproject.server.GPT.dto.GPTCompletionChatRequest;
 import ssodamproject.server.GPT.dto.GPTCompletionRequest;
 
 @RestController
-@RequestMapping("/api/chatgpt/rest")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class ChatGPTRestController {
 
@@ -24,7 +24,7 @@ public class ChatGPTRestController {
         return gptChatRestService.completion(gptCompletionRequest);
     }
 
-    @PostMapping("/completion/chat")
+    @PostMapping("/chatbot")
     public CompletionChatResponse completionChat(final @RequestBody GPTCompletionChatRequest gptCompletionChatRequest) {
 
         return gptChatRestService.completionChat(gptCompletionChatRequest);
