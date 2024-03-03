@@ -23,7 +23,7 @@ public class GPTCompletionChatRequest {
 
     private String message2;
 
-    private Integer maxTokens;
+    private Integer max_tokens;
 
     private Double top_n;
 
@@ -35,7 +35,7 @@ public class GPTCompletionChatRequest {
         return ChatCompletionRequest.builder()
                 .model(request.getModel())
                 .messages(convertChatMessages(request))
-                .maxTokens(request.getMaxTokens())
+                .maxTokens(request.getMax_tokens())
                 .temperature(request.getTemperature())
                 .topP(request.getTop_n())
                 .build();
