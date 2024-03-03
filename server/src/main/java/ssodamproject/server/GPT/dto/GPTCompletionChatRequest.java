@@ -28,6 +28,7 @@ public class GPTCompletionChatRequest {
     private Double top_n;
 
     private Double temperature;
+    private Double frequency_penalty;
 
 
     public static ChatCompletionRequest of(GPTCompletionChatRequest request) {
