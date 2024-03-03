@@ -52,7 +52,9 @@ public class GPTChatRestService {
     public CompletionChatResponse completionChat(GPTCompletionChatRequest gptCompletionChatRequest) {
         ChatCompletionResult chatCompletion = openAiService.createChatCompletion(
                 GPTCompletionChatRequest.of(gptCompletionChatRequest));
-
+        System.out.println(gptCompletionChatRequest.getFrequency_penalty());
+        System.out.println(gptCompletionChatRequest.getMaxTokens());
+        System.out.println(gptCompletionChatRequest.getMessage1());
 
         CompletionChatResponse response = CompletionChatResponse.of(chatCompletion);
 
