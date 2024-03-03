@@ -34,11 +34,11 @@ public class GPTCompletionChatRequest {
     public static ChatCompletionRequest of(GPTCompletionChatRequest request) {
         return ChatCompletionRequest.builder()
                 .model(request.getModel())
-                .frequencyPenalty(request.getFrequency_penalty())
+                .frequencyPenalty(1.2)
                 .messages(convertChatMessages(request))
-                .maxTokens(request.getMax_tokens())
-                .temperature(request.getTemperature())
-                .topP(request.getTop_n())
+                .maxTokens(300)
+                .temperature(0.2)
+                .topP(0.92)
                 .build();
     }
 
