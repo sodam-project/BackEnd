@@ -3,9 +3,7 @@ package ssodamproject.server.GPT.dto;
 import com.theokanning.openai.completion.chat.ChatCompletionChoice;
 import com.theokanning.openai.completion.chat.ChatCompletionResult;
 import com.theokanning.openai.completion.chat.ChatMessage;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class CompletionChatResponse {
 
     private String id;
@@ -36,6 +35,7 @@ public class CompletionChatResponse {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
+    @ToString
     public static class Message {
 
         private String role;
@@ -54,6 +54,7 @@ public class CompletionChatResponse {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
+    @ToString
     public static class Usage {
 
         private Long promptTokens;
@@ -61,6 +62,7 @@ public class CompletionChatResponse {
         private Long completionTokens;
 
         private Long totalTokens;
+
 
         public static Usage of(com.theokanning.openai.Usage usage) {
             return new Usage(

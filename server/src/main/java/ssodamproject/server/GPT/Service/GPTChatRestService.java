@@ -53,8 +53,11 @@ public class GPTChatRestService {
         ChatCompletionResult chatCompletion = openAiService.createChatCompletion(
                 GPTCompletionChatRequest.of(gptCompletionChatRequest));
 
+        System.out.println("request: " + gptCompletionChatRequest); // request 찍어보기
 
         CompletionChatResponse response = CompletionChatResponse.of(chatCompletion);
+
+        System.out.println(response); // response 찍어보기
 
         List<String> messages = response.getMessages().stream()
                 .map(CompletionChatResponse.Message::getMessage)
