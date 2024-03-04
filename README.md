@@ -48,6 +48,7 @@
 
 ## 백엔드 설계
 ### ERDCloud
+![image](https://github.com/ssodam-project/BackEnd/assets/48240083/005836d6-a47c-4e6c-a14f-157b478583d5)
 
 
 ### API 명세서
