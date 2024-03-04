@@ -57,4 +57,30 @@ https://www.ssodam-love-chatting.site/
 
 https://www.ssodam-love-chatting.site/swagger-ui/index.html
 
+### Rule
+
+| 태그   | 설명                                       |
+|--------|--------------------------------------------|
+| DOCS   | 문서 작성 및 수정 작업 (README, 템플릿 등) |
+| FEAT   | 새로운 기능 추가 작업                      |
+| FIX    | 에러 및 버그 수정, 기능 수정 작업          |
+| HOTFIX | 긴급 수정                                  |
+| REFACTOR | 코드 리팩토링 작업 (버그 수정이나 기능 추가 X) |
+| RENAME | 네이밍 변경 (파일명, 변수명 등)            |
+| REMOVE | 파일 및 코드 삭제                          |
+| COMMENT | 주석 추가                                 |
+| CHORE  | 빌드 업무 및 패키지 매니저 수정 작업 등의 작업 |
+| MERGE  | 다른 브랜치 머지 작업                    |
+| TEST   | 테스트 관련 작업                          |
+| STYLE  | 코드 포맷팅                               |
+
+| 브랜치  | 설명               |
+|---------|--------------------|
+| main    | 실제 프로덕트 브랜치 |
+| dev     | 신규 버전 개발 브랜치 |
+| feat    | 기능 구현 브랜치   |
+| fix     | 기능 수정 브랜치   |
+| refactor| 리팩토링 브랜치    |
+| bugfix  | 버그 수정 브랜치   |
+
 
