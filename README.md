@@ -10,7 +10,7 @@
 | BE | BE | DESIGN/FE | FE | FE | DATA |  
 | --- | --- | --- | --- | --- | --- |
 | 김성현 | 임정연 | 이선명 | 정인영 | 장세환 | 인사이트 |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | <a href="https://github.com/ssodam-project/BackEnd/assets/48240083/bfd53aba-3d8f-4688-a915-c47bacc49ff7"> <img src="https://github.com/13155a1" alt="GitHub Link"></a>)| --- | --- | --- | --- | --- |
 
 ---ㅇ
 ## 프로젝트 소개
