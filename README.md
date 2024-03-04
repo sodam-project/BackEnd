@@ -4,6 +4,7 @@
 
 ---
 ## 배포 주소
+https://www.ssodam-love-chatting.site/
 ![image](https://github.com/ssodam-project/BackEnd/assets/48240083/8d753fd5-1059-4557-ace2-0b07ff6aa6ea)
 ---
 ## 팀원 소개
@@ -54,6 +55,6 @@
 
 ### API 명세서
 
-
+https://www.ssodam-love-chatting.site/swagger-ui/index.html
 
 
