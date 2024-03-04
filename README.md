@@ -10,9 +10,10 @@
 | BE | BE | DESIGN/FE | FE | FE | DATA |  
 | --- | --- | --- | --- | --- | --- |
 | 김성현 | 임정연 | 이선명 | 정인영 | 장세환 | 인사이트 |
-| --- | <a href="https://github.com/ssodam-project/BackEnd/assets/48240083/bfd53aba-3d8f-4688-a915-c47bacc49ff7"> <img src="https://github.com/13155a1" alt="GitHub Link"></a>)| --- | --- | --- | --- | --- |
+| <a href="https://github.com/sunghyun1356"> <img src="https://github.com/ssodam-project/BackEnd/assets/48240083/88012bed-0598-486e-90e6-e907a0943db7" alt="GitHub Link"></a> | <a href="https://github.com/13155a1"> <img src="https://github.com/ssodam-project/BackEnd/assets/48240083/bfd53aba-3d8f-4688-a915-c47bacc49ff7" alt="GitHub Link"></a>| <a href="https://github.com/sunmyeonglee"> <img src="https://github.com/ssodam-project/BackEnd/assets/48240083/efa2a11b-948a-4ae8-83da-2b5f05df663e" alt="GitHub Link"></a> | <a href="https://github.com/rmdnps10"> <img src="https://github.com/ssodam-project/BackEnd/assets/48240083/964a532d-daac-494d-a092-8eecf4f4ef5f" alt="GitHub Link"></a> | <a href="https://github.com/SehwanChang"> <img src="https://github.com/ssodam-project/BackEnd/assets/48240083/f3790327-3989-4540-a426-3ca86ea76ca1)" alt="GitHub Link"></a> |  <a href="https://github.com/Insight-Sogang-Univ"> <img src="https://github.com/ssodam-project/BackEnd/assets/48240083/1d62c251-24e5-4c08-9304-29cb93413996" alt="GitHub Link"></a>  |
 
----ㅇ
+
+
 ## 프로젝트 소개
 
 ![image](https://github.com/ssodam-project/BackEnd/assets/48240083/c5e549b6-7270-45db-85b1-5aa08b6eee48)
