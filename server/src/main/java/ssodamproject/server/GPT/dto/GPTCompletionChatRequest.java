@@ -36,7 +36,7 @@ public class GPTCompletionChatRequest {
     public static ChatCompletionRequest of(GPTCompletionChatRequest request) {
         return ChatCompletionRequest.builder()
                 .model(request.getModel())
-                .frequencyPenalty(1.2)
+                .frequencyPenalty(1.0)
                 .messages(convertChatMessages(request))
                 .maxTokens(300)
                 .temperature(0.2)
