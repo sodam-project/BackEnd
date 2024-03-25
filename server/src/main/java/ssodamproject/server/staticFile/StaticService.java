@@ -36,7 +36,7 @@ public class StaticService {
 
 
     }
-    @Scheduled(cron = "0 0 0 * * ?")
+    @Scheduled(cron = "0 0 0 * * *",zone="Asia/Seoul")
     public void updateCompetitionDday() {
         StaticEntity staticEntity = staticRepository.findById(0L).orElseThrow(() -> new RestApiException(ErrorType.NOT_FOUND));
         staticEntity.setTodayVisit(0);
