@@ -51,7 +51,7 @@ https://www.ssodam-love-chatting.site/
 
 ### ❤️ Output
 <p>
-  약 1000명의 유저 데이터 모집
+  약 1000명의 유저 데이터 수집
 </p>
 
 ### ❤️ 백엔드 설계
